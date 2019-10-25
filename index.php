@@ -8,6 +8,7 @@
 		<meta name="Language" content="es">
 		<link rel="stylesheet" media="all" href="css/w3.css">
 		<link rel="stylesheet" media="all" href="css/w3-theme-grey.css">
+		<link rel="stylesheet" media="all" href="css/theme.css">
 		<link rel="shortcut icon" href="favicon.ico">
 		<script>
 		function graph_donutValue(id_svg,value,config){
@@ -90,20 +91,6 @@
 			svg.setAttribute("height", realHeight);
 		}
 	</script>
-	<style>
-	.flex{display:flex;flex-wrap:wrap;justify-content:flex-start;padding:0;}
-	.flex-item{display:flex;width:100%;}
-	.flex-content{display:flex;flex-direction:column;width:100%;}
-	@media print{
-		.flex{display: block;}
-		.flex-item{display:block;}
-		.flex-content{display:block;}
-		.w3-responsive{display:block;overflow-x:inherited;}
-		.w3-col:not(.rrc-donut){width:100%!important;}
-		table{table-layout:fixed!important;overflow-wrap:break-word!important;}
-		.rrc-hide-print{display:none;}
-	}
-	</style>
 </head>
 <body class="w3-padding w3-theme-l5">
 <div class="w3-container w3-content">
