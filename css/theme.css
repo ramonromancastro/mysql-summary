@@ -1,0 +1,12 @@
+.flex{display:flex;flex-wrap:wrap;justify-content:flex-start;padding:0;}
+.flex-item{display:flex;width:100%;}
+.flex-content{display:flex;flex-direction:column;width:100%;}
+@media print{
+	.flex{display: block;}
+	.flex-item{display:block;}
+	.flex-content{display:block;}
+	.w3-responsive{display:block;overflow-x:inherited;}
+	.w3-col:not(.rrc-donut){width:100%!important;}
+	table{table-layout:fixed!important;overflow-wrap:break-word!important;}
+	.rrc-hide-print{display:none;}
+}
