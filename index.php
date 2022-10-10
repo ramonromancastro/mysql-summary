@@ -143,7 +143,7 @@
 	<div class="w3-row-padding w3-stretch flex">
 		<div class="w3-col l6 m12 s12 flex-item w3-section">
 			<div class="w3-card w3-white w3-round w3-padding flex-content">
-				<h1>MySQL Summary <span class="w3-small w3-text-grey">v1.0</span></h1>
+				<h1>MySQL Summary <span class="w3-small w3-text-grey">v1.0.1</span></h1>
 				<form method="POST" class="rrc-hide-print">
 					<label class="w3-small w3-text-grey"><strong>Servidor</strong></label>
 					<input class="w3-input w3-border w3-small" type="text" name="host" placeholder="Nombre del servidor">
