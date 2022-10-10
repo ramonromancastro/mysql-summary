@@ -236,7 +236,7 @@
 					<tbody>
 						<tr><td>Password validation <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/validate-password.html">[?]</a></td><td><?php echo write_circle($feature_validate_password)." $feature_validate_password$feature_validate_password_value"; ?></td></tr>
 						<tr><td>Perfomance schema <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/performance-schema.html">[?]</a></td><td><?php echo write_circle($performance_schema)." $performance_schema"; ?> </td></tr>
-						<tr><td>SSL availability</td><td><?php echo write_circle($performance_schema)." $performance_schema"; ?> </td></tr>
+						<tr><td>SSL availability</td><td><?php echo write_circle($ssl_availability)." $ssl_availability"; ?> </td></tr>
 						<tr><td>Error log</td><td><?php echo $status['log_error']; ?> </td></tr>
 						<tr><td>General log</td><td><?php echo write_circle($general_log)." $general_log"; ?> </td></tr>
 						<tr><td>Slow query log</td><td><?php echo write_circle($slow_query_log)." $slow_query_log"; ?> </td></tr>
