@@ -216,6 +216,12 @@
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
 					<caption>Información del servidor</caption>
+					<thead class="w3-hide">
+						<tr>
+							<th>Campo</th>
+							<th>Valor</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr><td>Servidor</td><td><strong><?php echo $status['hostname']; ?></strong></td></tr>
 						<tr><td>Socket</td><td><?php echo $status['socket']; ?></td></tr>
@@ -236,6 +242,12 @@
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
 					<caption>Detalles de configuración</caption>
+					<thead class="w3-hide">
+						<tr>
+							<th>Campo</th>
+							<th>Valor</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr><td>Password validation <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/validate-password.html">[?]</a></td><td><?php echo write_circle($feature_validate_password)." $feature_validate_password$feature_validate_password_value"; ?></td></tr>
 						<tr><td>Perfomance schema <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/performance-schema.html">[?]</a></td><td><?php echo write_circle($performance_schema)." $performance_schema"; ?> </td></tr>
