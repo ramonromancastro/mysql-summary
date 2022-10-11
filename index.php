@@ -111,8 +111,9 @@
 		if ($size){
 			return round($size/1048576,$precision) . ' MiB';
 		}
-		else
+		else{
 			return '0 MiB';
+		}
 	}
 	
 	function write_circle($type='ok',$size=16,$title=null){
@@ -337,10 +338,10 @@
 					$limit = substr($item['limit'],1);
 					switch($operator){
 						case ">":
-							if ($percent > $limit) $background = 'red';
+							if ($percent > $limit) { $background = 'red'; }
 							break;
 						case "<":
-							if ($percent < $limit) $background = 'red';
+							if ($percent < $limit) { $background = 'red'; }
 							break;
 						default:
 							$background = 'orange';
@@ -435,8 +436,9 @@
 						if ($row[$meta->name] == "Y"){
 							if (trim($privileges) == "")
 								$privileges = str_replace("_priv", "", $meta->name);
-							else
+							else{
 								$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
+							}
 						}
 					}
 				}
@@ -460,10 +462,12 @@
 				foreach($fields as $meta){
 					if (($meta->name != "User") && ($meta->name != "Host") && ($meta->name != "Db")){
 						if ($row[$meta->name] == "Y"){
-							if (trim($privileges) == "")
+							if (trim($privileges) == ""){
 								$privileges = str_replace("_priv", "", $meta->name);
-							else
+							}
+							else{
 								$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
+							}
 						}
 					}
 				}
