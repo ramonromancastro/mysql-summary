@@ -268,8 +268,17 @@
 							<td>
 <?php
 			$result = mysqli_query($link,"SHOW ENGINES");
+			$support_color = 'green';
+			$support_sign = '+';
+			if ($row['Support'] == 'NO'){
+				$support_color = 'red';
+				$support_sign = '-';
+			}
+			elseif ($row['Support'] == 'DEFAULT'){
+				$support_color = 'blue';
+			}
 			while ($row = mysqli_fetch_assoc($result)) {
-				echo '<span title="'.$row['Comment'].'" class="w3-text-'.(($row['Support'] == 'NO')?'red':(($row['Support'] == 'DEFAULT')?'blue':'green')).'">'.(($row['Support'] == 'NO')?'-':(($row['Support'] == 'DEFAULT')?'+':'+')).''.$row['Engine'].'</span> ';
+				echo '<span title="'.$row['Comment'].'" class="w3-text-'.$support_color.'">'.$support_sign.$row['Engine'].'</span> ';
 			}
 			mysqli_free_result($result);
 ?>
@@ -449,12 +458,11 @@
 				$fields = mysqli_fetch_fields($result);
 				foreach($fields as $meta){
 					if (($meta->name != "User") && ($meta->name != "Host") && ($meta->name != "Db")){
-						if ($row[$meta->name] == "Y"){
-							if (trim($privileges) == "")
-								$privileges = str_replace("_priv", "", $meta->name);
-							else{
-								$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
-							}
+						if (($row[$meta->name] == "Y") && (trim($privileges) == "")){
+							$privileges = str_replace("_priv", "", $meta->name);
+						}
+						else{
+							$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
 						}
 					}
 				}
@@ -477,13 +485,11 @@
 				$fields = mysqli_fetch_fields($result);
 				foreach($fields as $meta){
 					if (($meta->name != "User") && ($meta->name != "Host") && ($meta->name != "Db")){
-						if ($row[$meta->name] == "Y"){
-							if (trim($privileges) == ""){
-								$privileges = str_replace("_priv", "", $meta->name);
-							}
-							else{
-								$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
-							}
+						if (($row[$meta->name] == "Y") && (trim($privileges) == "")){
+							$privileges = str_replace("_priv", "", $meta->name);
+						}
+						else{
+							$privileges = $privileges.', '.str_replace("_priv", "", $meta->name);
 						}
 					}
 				}
