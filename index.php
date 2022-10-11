@@ -215,6 +215,7 @@
 				<header class="w3-container w3-text-grey w3-large w3-padding">Información general</header>
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
+					<caption>Información del servidor</caption>
 					<tbody>
 						<tr><td>Servidor</td><td><strong><?php echo $status['hostname']; ?></strong></td></tr>
 						<tr><td>Socket</td><td><?php echo $status['socket']; ?></td></tr>
@@ -234,6 +235,7 @@
 				<header class="w3-container w3-text-grey w3-large w3-padding">Configuración</header>
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
+					<caption>Detalles de configuración</caption>
 					<tbody>
 						<tr><td>Password validation <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/validate-password.html">[?]</a></td><td><?php echo write_circle($feature_validate_password)." $feature_validate_password$feature_validate_password_value"; ?></td></tr>
 						<tr><td>Perfomance schema <a title="Documentación oficial" target=_blank rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/<?php preg_match('/\d+\.\d+/',$status['version'], $match); echo $match[0]; ?>/en/performance-schema.html">[?]</a></td><td><?php echo write_circle($performance_schema)." $performance_schema"; ?> </td></tr>
@@ -368,6 +370,7 @@
 				<header class="w3-container w3-text-grey w3-large w3-padding">Bases de datos</header>
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
+					<caption>Bases de datos</caption>
 					<thead>
 						<tr>
 							<th>Nombre</th>
@@ -408,6 +411,7 @@
 				<header class="w3-container w3-text-grey w3-large w3-padding">Usuarios</header>
 				<div class="w3-responsive">
 				<table class="w3-table w3-striped w3-small w3-bordered">
+					<caption>Usuarios</caption>
 				<thead>
 					<tr>
 						<th>Tipo</th>
