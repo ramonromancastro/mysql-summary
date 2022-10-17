@@ -156,12 +156,12 @@
 				</form>
 				<div class="w3-row-padding w3-stretch">
 					<div class="w3-col w3-half w3-tiny"><a href="http://www.rrc2software.com">[www]</a> <a href="mail:ramonromancastro@gmail.com">[email]</a> <a href="https://github.com/ramonromancastro">[github]</a></div>
-					<div class="w3-col w3-half"><a href="https://www.mysql.com/" target="_blank"><img class="w3-right" src="images/powered-by-mysql-125x64.png" title="Powered by MySQL" alt="Powered by MySQL"/></a></div>
+					<div class="w3-col w3-half"><a rel="noopener" href="https://www.mysql.com/" target="_blank"><img class="w3-right" src="images/powered-by-mysql-125x64.png" title="Powered by MySQL" alt="Powered by MySQL"/></a></div>
 				</div>
 				<p class="w3-tiny w3-text-grey">
 					Copyright 2019 by Ramón Román Castro.<br/>
 					MySQL and MySQL logo son propiedad de Oracle Corporation.<br/>
-					<a href="https://www.w3schools.com/w3css/" target="_blank">Powered by W3.CSS</a>.
+					<a rel="noopener" href="https://www.w3schools.com/w3css/" target="_blank">Powered by W3.CSS</a>.
 				</p>
 			</div>
 		</div>
