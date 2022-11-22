@@ -144,7 +144,7 @@
 	<div class="w3-row-padding w3-stretch flex">
 		<div class="w3-col l6 m12 s12 flex-item w3-section">
 			<div class="w3-card w3-white w3-round w3-padding flex-content">
-				<h1>MySQL Summary <span class="w3-small w3-text-grey">v1.0.1</span></h1>
+				<h1>MySQL Summary <span class="w3-small w3-text-grey">v1.0.2</span></h1>
 				<form method="POST" class="rrc-hide-print">
 					<label class="w3-small w3-text-grey"><strong>Servidor</strong></label>
 					<input class="w3-input w3-border w3-small" type="text" name="host" placeholder="Nombre del servidor">
@@ -268,16 +268,16 @@
 							<td>
 <?php
 			$result = mysqli_query($link,"SHOW ENGINES");
-			$support_color = 'green';
-			$support_sign = '+';
-			if ($row['Support'] == 'NO'){
-				$support_color = 'red';
-				$support_sign = '-';
-			}
-			elseif ($row['Support'] == 'DEFAULT'){
-				$support_color = 'blue';
-			}
 			while ($row = mysqli_fetch_assoc($result)) {
+				$support_color = 'green';
+				$support_sign = '+';
+				if ($row['Support'] == 'NO'){
+					$support_color = 'red';
+					$support_sign = '-';
+				}
+				elseif ($row['Support'] == 'DEFAULT'){
+					$support_color = 'blue';
+				}
 				echo '<span title="'.$row['Comment'].'" class="w3-text-'.$support_color.'">'.$support_sign.$row['Engine'].'</span> ';
 			}
 			mysqli_free_result($result);
@@ -329,10 +329,6 @@
 					"percent" => ($status["Innodb_log_write_requests"])?($status["Innodb_log_write_requests"]-$status["Innodb_log_writes"])/$status["Innodb_log_write_requests"]:0,
 					"limit" => "<90"),
 				array(
-					"test" => "Query cache efficiency",
-					"percent" => ($status["Com_select"] + $status["Qcache_hits"])?$status["Qcache_hits"]/($status["Com_select"]+$status["Qcache_hits"]):0,
-					"limit" => "<20"),
-				array(
 					"test" => "Open files",
 					"percent" => ($status["open_files_limit"])?$status["Open_files"]/$status["open_files_limit"]:0,
 					"limit" => ">85"),
@@ -350,6 +346,13 @@
 					"percent" => ($status["Created_tmp_tables"])?$status["Created_tmp_disk_tables"]/$status["Created_tmp_tables"]:0,
 					"limit" => ">25"),
 				);
+
+                        if (version_compare($status['version'], '8', '<')){
+                            $stats[] = array(
+                                "test" => "Query cache efficiency",
+                                "percent" => ($status["Com_select"] + $status["Qcache_hits"])?$status["Qcache_hits"]/($status["Com_select"]+$status["Qcache_hits"]):0,
+                                "limit" => "<20");
+                        }
 
 			usort($stats,"sort_stats");
 			
